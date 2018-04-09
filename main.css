@@ -1,0 +1,177 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global */
+body {
+  font: normal 16px 'Playfair Display', serif;
+  overflow: hidden;
+}
+
+footer {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+}
+
+/* Typography */
+h1 {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 100%;
+  text-align: right;
+  float: right;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 3px;
+  border: 0;
+  outline: 0;
+}
+.btn-demo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+}
+.btn-demo span {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Demo */
+.demo-container {
+  width: 700px;
+  height: 380px;
+  background-color: #000;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  
+}
+
+.live-stream {
+  width: 700px;
+  height: 380px;
+  overflow: hidden;
+}
+
+.run-demo .demo-container {
+  top: 50%;
+  transform: translate(-50%, -80%);
+}
+
+.run-demo .btn-demo {
+  transform: scale(0);
+}
+.demo-container .controls {
+  position: absolute;
+  bottom: -100px;
+  background-color: #fff;
+  right: 5%;
+  left: 5%;
+  height: 100px;
+  box-shadow: 0 0 5px rgba(0,0,0,.1);
+  text-align: center;
+}
+
+.demo-container .preview {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  transition: all .2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.demo-container .preview img {
+  max-width: 100%;
+}
+.demo-container .preview .btn-preview {
+  background-color: #fff;
+  
+  padding: 7px 10px;
+  text-align: center;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.demo-container.preview-is-active .preview {
+  width: auto;
+  height: auto;
+}
+
+
+/* Demo controls */
+.controls .control {
+  display: inline-block;
+  padding: 5px 20px;
+  height: 100px;
+}
+.control.control-capture {
+  border-left: 1px dashed rgba(0, 0, 0, .1);
+  width: 140px;
+}
+
+.control .control-icon {
+  width: 60px;
+  height: 60px;
+  padding: 10px 10px 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Helpers */
+.has-effect {
+  transition: all .4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+button, 
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Flash messages */
+.flash {
+  display: block;
+  padding: 0 20px;
+  border-top: 4px solid rgba(0,0,0,.1);
+  width: 250px;
+  position: absolute;
+  bottom: 0;
+  font-size: 18px;
+  height: 4px;
+  overflow: hidden;
+}
+.flash.is-active {
+  height: auto;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+.flash.ok {
+  border-top-color: #76d360;
+}
+.flash.info {
+  border-top-color: #007bff;
+}
