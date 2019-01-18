@@ -62,7 +62,7 @@ const handleDetectedFaces = faces => {
       const { top, left, width, height } = boundingBox;
 
       flashMessage('Face(s) Detected', 'ok');
-      landmarks.forEach(({ location: { x, y }, type }) => {
+      landmarks.forEach(({ locations: { x, y }, type }) => {
         context.beginPath();
         context.arc(x, y, 3, 0, Math.PI * 2);
 
